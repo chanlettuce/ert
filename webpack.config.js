@@ -34,13 +34,12 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    // node_modules配下を、vendor.js としてバンドルする。
-    new webpack.optimize.CommonsChunkPlugin({
+  optimization: {
+    splitChunks: {
       name: "vendor",
-      minChunks: function(module) {
+      chunks: function(module) {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
-    })
-  ]
+    }
+  }
 };
