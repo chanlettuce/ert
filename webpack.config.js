@@ -37,9 +37,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       name: "vendor",
-      chunks: function(module) {
-        return module.context && module.context.indexOf("node_modules") !== -1;
-      }
+      chunks: "initial"
     }
   }
 };

@@ -1,4 +1,6 @@
+import * as $ from "jquery";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import JsonSorter from "./components/JsonSorter";
 
-ReactDOM.render(<h1>ハロワ</h1>, document.getElementById("root"));
+ReactDOM.render(<JsonSorter />, $("#root")[0]);

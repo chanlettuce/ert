@@ -1,12 +1,10 @@
-import { object } from "prop-types";
-
 export const methods = {
-  objectSort: (obj: object) => {
+  objectSort: (obj: any): object => {
     if (Array.isArray(obj)) {
       return obj.sort();
     }
 
-    let keys = [];
+    let keys: string[] = [];
     for (const key in obj) {
       if (typeof obj[key] == "object") {
         obj[key] = methods.objectSort(obj[key]);
@@ -15,7 +13,7 @@ export const methods = {
     }
     keys.sort();
 
-    let output = {};
+    let output: any = {};
     keys.forEach(key => {
       output[key] = obj[key];
     });
