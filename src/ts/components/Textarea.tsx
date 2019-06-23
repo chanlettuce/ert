@@ -24,9 +24,9 @@ export default class Textarea extends React.Component<Props, State> {
   public state: State = { value: this.props.value };
 
   public getValue = () => this.state.value;
-  public setValue = (val: string) => this.setState({ value: val });
+  public setValue = (val: string): void => this.setState({ value: val });
+
   private changeText = (e: any): void => {
-    console.log("changeText is called");
     const callbackResult = this.props.onChange(e.target.value);
     this.setState({ value: callbackResult });
   };
